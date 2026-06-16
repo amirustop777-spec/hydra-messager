@@ -7,13 +7,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Подключаем чистый, премиальный шрифт Inter -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Базовые сбросы */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +19,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* Глубокий темный фон + фиолетовые светящиеся сферы на бэкграунде */
         body {
             background-color: #08070b;
             color: #f3f4f6;
@@ -34,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* Размытые фиолетовые пятна на фоне (тот самый стеклянный эффект) */
         body::before, body::after {
             content: "";
             position: absolute;
@@ -49,7 +45,6 @@
         body::before { top: 15%; left: 20%; }
         body::after { bottom: 15%; right: 20%; }
 
-        /* Главный контейнер-карточка с эффектом матового стекла */
         .main-card {
             position: relative;
             z-index: 2;
@@ -65,7 +60,6 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         }
 
-        /* Счётчик онлайна (минималистичная плашка сверху) */
         .online-badge {
             display: inline-flex;
             align-items: center;
@@ -81,7 +75,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Зеленая точка онлайна */
         .online-badge::before {
             content: "";
             width: 6px;
@@ -91,7 +84,6 @@
             box-shadow: 0 0 8px #10b981;
         }
 
-        /* Аккуратный крупный заголовок */
         h1 {
             font-size: 1.75rem;
             font-weight: 600;
@@ -101,7 +93,6 @@
             letter-spacing: -0.5px;
         }
 
-        /* Блок цитаты */
         .quote-container {
             margin-bottom: 32px;
             padding: 0 10px;
@@ -123,14 +114,12 @@
             letter-spacing: 1px;
         }
 
-        /* Подпись внизу */
         p.privacy-text {
             font-size: 0.9rem;
             color: #9ca3af;
             margin-bottom: 32px;
         }
 
-        /* Кнопки управления */
         .actions {
             display: flex;
             flex-direction: column;
@@ -148,7 +137,6 @@
             transition: all 0.2s ease-in-out;
         }
 
-        /* Основная фиолетовая кнопка */
         .btn-primary {
             background: #7c3aed;
             color: #ffffff;
@@ -160,8 +148,6 @@
             transform: translateY(-1px);
             box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
         }
-
-        /* Второстепенная прозрачная кнопка */
         .btn-secondary {
             background: rgba(255, 255, 255, 0.03);
             color: #e5e7eb;
@@ -174,7 +160,6 @@
             color: #ffffff;
         }
 
-        /* Адаптив под мелкие экраны */
         @media (max-width: 480px) {
             .main-card {
                 padding: 30px 20px;
@@ -187,7 +172,6 @@
 <body>
 
     <div class="main-card">
-        <!-- Счётчик онлайна перенесён наверх для правильной иерархии интерфейса -->
         <div class="online-badge">Онлайн: {{users_count}}</div>
         
         <h1>Добро пожаловать в слепую зону интернета</h1>
@@ -200,9 +184,8 @@
         <p class="privacy-text">Мы просто ценим ваше право на цифровое уединение ._.</p>
         
         <div class="actions">
-            <!-- Поменял кнопки местами: Войти — главное целевое действие, репозиторий — вторичное -->
             <a href="{% url 'login' %}" class="btn-primary">Войти в аккаунт</a>
-            <a href="repozitory" class="btn-secondary">Наш репозиторий на GitHub</a>
+            <a href="https://github.com/amirustop777-spec/hydra-messager" class="btn-secondary">Наш репозиторий на GitHub</a>
         </div>
     </div>
 

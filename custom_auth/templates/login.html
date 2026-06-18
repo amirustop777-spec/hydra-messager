@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход в систему</title>
-    <!-- Подключаем шрифт и ваш отдельный CSS файл -->
-    <link rel="stylesheet" href="https://googleapis.com">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=1">
 </head>
 <body>
 
     <div class="login-container">
         <h2>Рады видеть!</h2>
         <p class="subtitle">Пожалуйста, войдите в свой аккаунт</p>
-
-        <!-- Блок вывода ошибки -->
+        
         {% if error %}
             <div class="error-box">
                 {{ error }}
@@ -36,6 +36,8 @@
             </div>
             
             <button type="submit" class="submit-btn">Войти на сайт</button>
+            
+            <a href="{% url 'welcome_home' %}" class="back-link">Вернуться назад</a>
         </form>
     </div>
 

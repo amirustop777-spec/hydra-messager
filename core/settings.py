@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +14,7 @@ SECRET_KEY = 'django-insecure-zy-ap&o2zo((fe1mqyq0gg^7e(saox!9ok5706^&j*^ydx40ui
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.1.128', '0.0.0.0']
 
 
 # Application definition
@@ -114,3 +115,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'custom_auth.Users'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'welcome_page', 'static'),
+]
